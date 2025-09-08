@@ -1,0 +1,25 @@
+# Method: Gehrig et al. 2023 (https://github.com/uzh-rpg/RVT)
+
+method:
+  # Info
+  name          : "rvt"
+  # Docker
+  docker_id       : rvt
+  docker_app      : /home/user/app
+  docker_datasets : /home/user/datasets
+  # Paths
+  root_path     : "YOUR_RVT_ROOT"
+  model_path    : "checkpoints/gen1"
+  checkpoint    : "rvt-b.ckpt"
+  preproc_path  : "preproc"
+  genx_path     : "scripts/genx"
+  # Scripts and configurations
+  run           : "validation.py"
+  eval          : "validation.py"
+  preprocess    : "preprocess_dataset.py"
+  # vars
+  datasets_name : ("gen1")
+  dataset_mode  : "sampling"
+  gpu_id        : 0
+  batch_size    : 1
+  num_workers   : 1

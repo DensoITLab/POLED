@@ -1,0 +1,67 @@
+# Data configuration
+
+# Dataset information
+dataset:
+  name: "NCaltech101"  # Name of the dataset
+  type: "caltech101"
+
+
+# Paths
+# root
+# |---N-Caltech101
+# |   |---original
+# |   |   |---training
+# |   |   |   |---Faces_easy
+# |   |   |   |   |---Faces_easy_0.npy
+# |   |   |   |   |---Faces_easy_1.npy
+# |   |   |   |   |---...
+# |   |   |---testing
+# |   |   |   |---Faces_easy
+# |   |   |   |   |---Faces_easy_0.npy
+# |   |   |   |   |---...
+# |   |   |---validation
+# |   |   |   |---Faces_easy
+# |   |   |   |   |---Faces_easy_0.npy
+# |   |   |   |   |---...
+# |   |---sampling
+# |   |   |---cvpr25
+# |   |   |   |---events_uniform_0.1-1
+# |   |   |   |   |---Faces_easy
+# |   |   |   |   |   |---Faces_easy_0.npy
+# |   |   |   |   |   |---...
+# |   |   |   |---events_poisson_0.1-1
+# |   |   |   |   |---Faces_easy
+# |   |   |   |   |   |---Faces_easy_0.npy
+# |   |   |   |   |---...
+# |   |   |---cvpr25-decay
+# |   |   |   |---events_uniform_0.1-1
+# |   |   |   |   |---Faces_easy
+# |   |   |   |   |   |---Faces_easy_0.npy
+# |   |   |   |   |   |---...
+# |   |   |   |---events_poisson_0.1-1
+# |   |   |   |   |---Faces_easy
+# |   |   |   |   |   |---Faces_easy_0.npy
+# |   |   |   |   |---...
+# |   |---pcd
+# |   |   |---original
+# |   |   |   |---Faces_easy
+# |   |   |   |   |---Faces_easy_0.pcd
+# |   |   |   |   |---Faces_easy_0.fo3d
+# |   |   |   |   |---...
+
+
+# Paths
+path:
+  root: ${POLED_DATA}/NCaltech101  # Root path for the dataset
+  evs_sampling: "original"  # original or sampling/type (sampling/cvpr25)
+  label: "Faces_easy"
+  seq: "Faces_easy_0.npy"
+  pcd: "pcd"  # Path to save the pcd files
+  evs_save: "sampling"  # Path to save the events
+  #output_filename: "events.pcd"  --> Follows the name in "filename" field
+
+
+# Variables
+var:
+  t_start: 0  # Start time of the sequence
+  t_end: 2  # End time of the sequence

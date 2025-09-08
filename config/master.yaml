@@ -1,0 +1,56 @@
+# YAML with all paths and variables
+
+parseyaml:
+  root_path: ${POLED_PATH}/scripts/parse_yaml.sh
+
+common:
+  # Docker (can be changed per case, but usually it's the same)
+  docker_app      : /home/user/app
+  docker_datasets : /home/user/datasets
+  # System
+  root          : ${POLED_PATH}
+  # Common
+  cfg_root      : config
+  cfg_datasets  : datasets
+  cfg_sampling  : ev_sampling
+  cfg_methods   : methods
+  cfg_models    : models
+  # Logs
+  logs_path               : logs
+  logs_retrained_path     : retrained
+  logs_res_file           : results.txt
+  logs_size_file          : size.txt
+  logs_time_file          : time.txt
+  logs_sampling_time_file : sampling_time.txt
+  logs_preproc_time_file  : preproc_time.txt
+  # Sampler mapping for latex tables
+  csv_sampler_map : sampler_map.csv
+
+datasets:
+  cfg_file: datasets_paths.yaml
+
+# Flags to chose what to do
+experiments:
+  flag_downsample: true
+  flag_methods: false
+  flag_results: false
+
+# Online Event Downsampling
+poled:
+  cfg_file: poled.yaml
+
+# Methods
+rpg_replearning:
+  cfg_file: rpg_replearning.yaml
+
+# RVT
+rvt:
+  cfg_file: rvt.yaml
+
+# TimeLens
+timelens:
+  cfg_file: timelens.yaml
+
+# ESFP
+esfp:
+  cfg_file: esfp.yaml

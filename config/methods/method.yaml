@@ -1,0 +1,25 @@
+# Example: Here goes the method definition
+
+method:
+  # Info
+  name          : method
+  # Docker
+  docker_id       : docker_method
+  docker_app      : /home/user/app
+  docker_datasets : /home/user/datasets
+  # Paths
+  root_path           : /method_root
+  model_path          : "log"
+  logs_tboard_path    : "logs_tboard"
+  # Scripts and configurations
+  run           : testing.py
+  train         : main.py
+  eval          : testing.py
+  checkpoint    : method_checkpoint
+  # vars
+  datasets_name : ("dataset")
+  dataset_mode  : "sampling"
+  device        : "cuda:0"
+  batch_size    : 1
+  num_workers   : 12
+  batch_size_train: 10

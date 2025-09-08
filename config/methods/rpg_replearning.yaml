@@ -1,0 +1,27 @@
+# Method: Gehrig et al. 2019 (https://github.com/uzh-rpg/rpg_event_representation_learning)
+
+method:
+  # Info
+  name          : "rpg_replearning"
+  # Docker
+  docker_id       : rpg_event_representation_learning
+  docker_app      : /home/user/app
+  docker_datasets : /home/user/datasets
+  # Paths
+  root_path           : YOUR_REPLEARNING_ROOT
+  model_path          : "log"
+  logs_tboard_path    : "logs_tboard"
+  # Scripts and configurations
+  run           : "testing.py"
+  train         : "main.py"
+  eval          : "testing.py"
+  checkpoint    : "original_model_best_caltech101.pth"
+  # vars
+  datasets_name : ("NCaltech101")
+  dataset_mode  : "sampling"
+  device        : "cuda:0"
+  batch_size    : 1
+  num_workers   : 12
+  batch_size_train: 10
+
+# python testing.py --test ~/datasets/N-Caltech101/rpg_event_representation_learning/sampling/cvpr25-decay/events_poisson_0.1-1/testing --checkpoint log/original_model_best.pth --device cuda:0

@@ -1,0 +1,32 @@
+# Method: Gehrig et al. 2021 (https://github.com/uzh-rpg/rpg_timelens)
+
+method:
+  # Info
+  name          : "timelens"
+  # Docker
+  docker_id       : timelens
+  docker_app      : /home/user/app
+  docker_datasets : /home/user/datasets
+  # Paths
+  root_path     : "YOUR_TIME_LENS_ROOT"
+  model_path    : "checkpoints"
+  checkpoint    : "checkpoint.bin"
+  images        : "images"
+  output        : "output"
+  eval_gt       : "GT" 
+  # Scripts and configurations
+  run           : "timelens/run_timelens.py"
+  eval          : "eval_scripts/rpg_event_based_frame_interpolation_evaluation/quantitative_evaluation.py"
+  # vars
+  datasets_name : ("hsergb")
+  dataset_mode  : "sampling"
+  gpu_id        : 0
+  batch_size    : 1
+  num_workers   : 1
+  eval_workers  : 30
+  skips         : (5)
+  inserts       : (5)
+  # debug
+  seqs_list     : ()
+
+  # "$python_eval" "$path_eval"/quantitative_evaluation.py "$real_eval_path"/skip_"$skip"/"$exp_name" -n 60 --methods "${methods_id[@]}" --num_skips "$skip" -o "$eval_logs"

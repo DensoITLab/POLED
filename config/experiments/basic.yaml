@@ -1,0 +1,5 @@
+# Config file to determine which results to show
+
+experiment:
+  methods: [rpg_replearning, rvt, timelens, esfp]
+  list: [cvprw25]

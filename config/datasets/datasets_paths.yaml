@@ -1,0 +1,48 @@
+# Centralize the paths to the datasets
+
+datasets_common:
+  # System paths
+  root: ${POLED_DATA}
+
+# NCaltech101
+NCaltech101:
+  # Info
+  name: "NCaltech101"
+  type: "caltech101"
+  # System paths
+  root: NCaltech101
+  split_train: "training"
+  split_test: "testing"
+  split_val: "validation"
+
+# gen1
+gen1:
+  # Info
+  name: "gen1"
+  type: "rvt"
+  # System paths
+  root: "gen1"
+  split_train: "train"
+  split_test: "test"
+  split_val: "val"
+
+# hsergb
+hsergb:
+  # Info
+  name: "hsergb"
+  type: "timelens"
+  # System paths
+  root: "hs-ergb/sampling/hsergb_conversion"
+  seqs: "seqs"
+  eval: "eval"
+
+# esfp
+esfp:
+  # Info
+  name: "esfp"
+  type: "esfp"
+  # System paths
+  root: "ESFP-Real/realworld_dataset_clean"
+  split_train: "train"
+  split_test: "test"
+  split_val: "test"

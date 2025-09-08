@@ -1,0 +1,23 @@
+# Method: Muglikar et al. 2023 (https://github.com/uzh-rpg/esfp)
+
+method:
+  # Info
+  name          : "esfp"
+  # Docker
+  docker_id       : esfp
+  docker_app      : /home/user/app
+  docker_datasets : /home/user/datasets
+  # Paths
+  root_path     : "YOUR_ESFP_ROOT"
+  # Scripts and configurations
+  run           : "evaluate_sfp.py"
+   # TODO (inside "esfp/training_code")
+  train         : "training_code/train.py"
+  eval          : "evaluate_sfp.py"
+  preprocess    : "preprocess_dataset.py"
+  # vars
+  datasets_name : ("esfp")
+  dataset_mode  : "sampling"
+  gpu_id        : 0
+  batch_size    : 1
+  num_workers   : 1

@@ -1,0 +1,19 @@
+# Event sampling arguments configuration
+
+# Online Event Downsampling
+poled:
+  # Docker
+  docker_id   : poled
+  docker_app  : /home/user/app
+  # Paths 
+  root_path: {$POLED_PATH}
+  # Experiment configurations
+  exp_cfgs        : ("cvprw25.yaml")
+  # ("NCaltech101" "gen1" "hsergb" "esfp")
+  datasets_name   : ("NCaltech101")
+  # ("det" "uniform" "poisson" "evDownNavi")
+  samplers        : ("uniform" "poisson")
+  runs            : ("1")
+  prob_inits      : ("05")
+  # Flags
+  flag_train      : false

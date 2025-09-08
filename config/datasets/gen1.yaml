@@ -1,0 +1,38 @@
+# Data configuration
+
+# Dataset information
+dataset:
+  name: "gen1"  # Name of the dataset
+  type: "rvt"
+
+
+# Paths
+# datasets/gen1/original/events_original/test/17-04-21_09-48-10_671500000_731500000_td.dat.h5
+# root
+# |---original
+# |   |---events_original
+# |   |   |---test
+# |   |   |   |---17-04-21_09-48-10_671500000_731500000_td.dat.h5
+# |   |   |   |---17-04-21_09-48-10_671500000_731500000_bbox.npy
+# |   |   |   |---...
+# |   |---pcd
+# |   |   |---test
+# |   |   |   |---17-04-21_09-48-10_671500000_731500000.pcd
+# |   |   |   |---17-04-21_09-48-10_671500000_731500000.fo3d
+# |   |   |   |---...
+
+path:
+  root: ${POLED_DATA}/gen1  # Root path for the dataset
+  evs_sampling: "original"  # original or sampling/type (sampling/cvpr25)
+  evs: "events_original"  # Path to the events
+  seq: "17-04-14_14-59-17_854500000_914500000"  # Sequence name
+  pcd: "pcd"  # Path to save the pcd files
+  prior: "priors"  # Path to the prior
+  prior_file: "bboxes_test.npy"  # Name of the prior
+  evs_save: "sampling"  # Path to save the events
+  
+
+# Variables
+var:
+  t_start: 0.3  # Start time of the sequence
+  t_end: 1  # End time of the sequence

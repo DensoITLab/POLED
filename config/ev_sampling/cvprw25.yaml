@@ -1,0 +1,46 @@
+# Event sampling arguments configuration
+
+# Variables that are usually set by the user
+dataset:
+  name          : "NCaltech101"
+  split         : "testing"
+  # Options: training, validation, testing. Some datasets might be "test" instead (e.g. gen1). For now we solve it within the code, but it's ugly.
+
+sampler_params:
+  # Options: det, detTemp, detSpat, uniform, accum, accum_hier, weighted, weightedSepPols, KDE, poisson, pointnet
+  sampler       : "poisson"
+  exp_name      : "cvprw25"
+  num_exp       : 1
+  prob_init     : 5
+  # Initial probability of accepting an event (0.prob_accept)
+
+# Hyperparameters related to the method
+hyperparams:
+  t_window_size : 6
+
+  alpha         : 1.0
+  alpha_prior   : 0.5
+
+  coarse_size   : 4
+
+  particle_size : 4
+  n_particles   : 1000
+
+  l_accept      : 200.0
+  l_reject      : 1.0
+
+# Deprecated
+deprecated:
+  ker_size      : 3
+
+# Variables for the code itself (not the method)
+code_config:
+  num_proc      : 20
+
+# Flags
+flags:
+  sep_pols            : true
+  decay               : false
+  prior               : true
+  t_surfaces          : false
+  debug               : false

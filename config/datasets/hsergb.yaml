@@ -1,0 +1,45 @@
+# Data configuration
+
+# Dataset information
+dataset:
+  name: "hsergb"  # Name of the dataset
+  type: "timelens"
+
+
+# Paths
+# root
+# |---baloon_popping
+# |   |---events
+# |   |   |---original
+# |   |   |   |---000000.npz
+# |   |   |   |---000001.npz
+# |   |   |   |---...
+# |   |   |---sampling
+# |   |   |   |---cvpr25
+# |   |   |   |   |---000000.npz
+# |   |   |   |   |---000001.npz
+# |   |   |   |   |---...
+# |   |---images
+# |   |   |---000000.png
+# |   |   |---000001.png
+# |   |   |---...
+# |   |---pcd
+# |   |   |---original
+# |   |   |   |---baloon_popping.pcd
+# |   |   |   |---baloon_popping.fo3d
+
+path:
+  root: ${POLED_DATA}/hs-ergb/sampling/hsergb_conversion/seqs  # Root path for the dataset
+  seq: "baloon_popping"  # Sequence name
+  evs: "events"  # Path to the events
+  evs_sampling: "original"  # original or sampling/type (sampling/cvpr25)
+  img: "images"  # Path to the images
+  tstamp: "images"  # Path to the timestamps
+  pcd: "pcd"  # Path to save the pcd files
+  evs_save: "sampling"  # Path to save the events
+  
+
+# Variables
+var:
+  t_start: 0.3  # Start time of the sequence
+  t_end: 1  # End time of the sequence

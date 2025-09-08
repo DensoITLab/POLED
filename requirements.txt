@@ -1,0 +1,14 @@
+jupyter 
+torch 
+torchvision 
+tensorboard 
+pycocotools 
+umap-learn 
+fiftyone 
+hdf5plugin 
+seaborn 
+python-box 
+tensorboard 
+open3d 
+tables 
+tonic

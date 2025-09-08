@@ -1,0 +1,51 @@
+# Data configuration
+
+# Dataset information
+dataset:
+  name: "esfp"  # Name of the dataset
+  type: "esfp"
+
+
+# Paths
+# datasets/gen1/original/events_original/test/17-04-21_09-48-10_671500000_731500000_td.dat.h5
+# root
+# |---original
+# |   |---train
+# |   |   |---seq1
+# |   |   |   |---Ev_0000.png
+# |   |   |   |---Ev_0045.png
+# |   |   |   |---Ev_0090.png
+# |   |   |   |---Ev_0135.png
+# |   |   |   |---events.h5
+# |   |   |   |---normal_gt2.npy
+# |   |   |   |---vgrid.npy
+# |   |   |---seq2
+# |   |   |   |---...  (same structure as seq1)
+# |   |   |---...
+# |   |---test
+# |   |   |---seq1
+# |   |   |   |---...  (same structure as in train seq1)
+# |   |   |---seq2
+# |   |   |   |---...
+# |   |   |---...
+# |---sampling
+# |   |---train
+# |   |   |---method_prob_run
+# |   |   |   |---seq1
+# |   |   |   |   |---Ev_0000.png
+# ...
+
+path:
+  root: ${POLED_DATA}/ESFP-Real/realworld_dataset_clean  # Root path for the dataset
+  evs_sampling: "original"  # original or sampling/type (sampling/cvpr25)
+  evs: "events_original"  # Path to the events
+  seq: "baketray2_24_10"  # Sequence name
+  pcd: "pcd"  # Path to save the pcd files
+  prior: "priors"  # Path to the prior
+  evs_save: "sampling"  # Path to save the events
+  
+
+# Variables
+var:
+  t_start: 0.3  # Start time of the sequence
+  t_end: 1  # End time of the sequence
