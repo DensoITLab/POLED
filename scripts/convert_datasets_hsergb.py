@@ -65,11 +65,11 @@ class DatasetConverter:
         self.seqs_path_list = []
 
     def find_seqs(self):
-        # Class to be done for every child
+        # Method to be done for every child
         pass
 
     def convert_dataset(self):
-        # Class to be done for every child
+        # Method to be done for every child
         pass
 
 

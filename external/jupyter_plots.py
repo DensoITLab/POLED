@@ -13,7 +13,7 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 def resize_image_array(image: np.ndarray, size: tuple) -> np.ndarray:
     return np.array(Image.fromarray(image).resize(size, Image.NEAREST))
 
-# Function to scale the image value to [0, 255]
+# Function to scale the image values to [0, 255]
 def normalize_scale_image(image: np.ndarray) -> np.ndarray:
     return (255 * (image - image.min()) / (image.max() - image.min())).astype(np.uint8)
 
@@ -38,7 +38,7 @@ def read_sequence_images(img_path: Path, **kwargs) -> list:
 def generate_evs_density_df(df_orig: pd.DataFrame, t_conv=1, t_res='10ms') -> pd.DataFrame:
     # Sort the DataFrame by time
     df = df_orig.sort_values('t')
-    # Convert in case the datasets is in s/ms/us. Assume ms as default
+    # Convert in case the dataset is in s/ms/us. Assume ms as default
     df['t_ms'] = df['t'] * t_conv
     # Erase time offset
     df['t_ms'] = df['t_ms'] - df.loc[0, 't_ms']
@@ -150,7 +150,7 @@ def generate_plot_dataframe(df_orig, dataset_type='caltech101'):
 
 # Adapted from https://gist.github.com/foolishflyfox/e30fd8bfbb6a9cee9b1a1fa6144b209c
 def plot_sequence_images(image_array: list, **kwargs) -> None:
-    ''' Display images sequence as an animation in jupyter notebook
+    ''' Display image sequence as an animation in jupyter notebook
 
     Args:
         image_array(numpy.ndarray): image_array.shape equal to (num_images, height, width, num_channels)
@@ -176,7 +176,7 @@ def plot_sequence_images(image_array: list, **kwargs) -> None:
 
 
 def plot_sequence_images_left_right(left_images: list, right_images: list, **kwargs) -> None:
-    ''' Display images sequence as an animation in jupyter notebook
+    ''' Display image sequence as an animation in jupyter notebook
 
     Args:
         left_images (list of numpy.ndarray): List of left camera images (shape: num_images, height, width, num_channels)
